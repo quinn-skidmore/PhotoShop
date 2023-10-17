@@ -1,0 +1,48 @@
+Editor
+
+<Editor>:
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            orientation: "horizontal"
+            TextInput:
+                id: img_name
+                hint_text: "Input image source"
+            Button:
+                text: "Load"
+                on_release: root.load_image()
+        BoxLayout:
+            size_hint: 1,8
+            orientation: "horizontal"
+            StackLayout:
+                orientation: "lr-tb"
+                Button:
+                    size_hint: 1,0.1
+                    text: "Black and White"
+                    on_release: root.black_and_white(root.ids.image.source,root.ids.image.source)
+                Button:
+                    size_hint: 1,0.1
+                    text: "Inverse"
+                    on_release: root.invert(root.ids.image.source,root.ids.image.source)
+                Button:
+                    size_hint: 1,0.1
+                    text: "Line Drawing"
+                    on_release: root.line_drawing(root.ids.image.source,root.ids.image.source)
+                Button:
+                    size_hint: 1,0.1
+                    text: "Pointillism"
+                    on_release: root.pointillism(root.ids.image.source,root.ids.image.source)
+                Button:
+                    size_hint: 1,0.1
+                    text: "Sepia"
+                    on_release: root.sepia(root.ids.image.source,root.ids.image.source)
+                Button:
+                    size_hint: 1,0.1
+                    text: "Pixelate"
+                    on_release: root.pixelate(root.ids.image.source,root.ids.image.source,0,0,200,200)
+            Image:
+                size_hint: 2,1
+                id: image
+                source: "monkey3.jpg"
+
+
