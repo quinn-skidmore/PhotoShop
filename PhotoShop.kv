@@ -1,5 +1,23 @@
-Editor
-
+MouseTouch
+<MouseTouch>:
+    txtinput: enter
+    button: load
+    image: img
+    BoxLayout:
+        size: "800dp", "600dp"
+        orientation: "vertical"
+        TextInput:
+            id: enter
+        Button:
+            color: "white"
+            background_color: "black"
+            id: load
+            text: "Press me"
+            on_press: print("pressed")
+        Image:
+            id: img
+            source: ""
+            size_hint: 1,10
 <Editor>:
     BoxLayout:
         orientation: "vertical"

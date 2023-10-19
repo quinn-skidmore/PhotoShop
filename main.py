@@ -1,14 +1,47 @@
 from kivy.app import App
 from kivy.lang import Builder
+from kivy.properties import ObjectProperty
+from kivy.uix.relativelayout import RelativeLayout
 from kivy.uix.screenmanager import Screen
 from PIL import Image
 from PIL import ImageDraw
 import random
 import math
+
+from kivy.uix.widget import Widget
+
+
 #Builder.load_file("PhotoGallery.kv")
 
 class PhotoShopApp(App):
     pass
+
+
+class MouseTouch(Screen, Widget):
+    txtinput = ObjectProperty(None)
+    button = ObjectProperty(None)
+    image = ObjectProperty(None)
+    def on_touch_down(self, touch):
+        #print("Mouse Button Pressed")
+        x, y = touch.x, touch.y
+        print("X coordinate: " + str(int(x)) + " y coordinate: " + str(int(y)))
+        #self.button.color = "black"
+        #self.button.text = "Pressed"
+        super().on_touch_down(touch)
+    '''
+    def on_touch_move(self, touch):
+        print("Mouse Moved")
+        coords = touch.pos
+        print("X coordinate: " + str(int(coords[0])) + " y coordinate: " + str(int(coords[1])))
+    '''
+    def on_touch_up(self, touch):
+        super()
+        #print("Mouse Button Up")
+        #coords = touch.pos
+        #print("X coordinate: " + str(int(coords[0])) + " y coordinate: " + str(int(coords[1])))
+        #self.button.background_color = "black"
+        #self.button.color = "white"
+        #self.button.text = "Press Me"
 
 
 class Editor(Screen):
