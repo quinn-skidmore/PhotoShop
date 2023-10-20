@@ -1,4 +1,4 @@
-MouseTouch
+Editor
 <MouseTouch>:
     txtinput: enter
     button: load
@@ -14,11 +14,13 @@ MouseTouch
             id: load
             text: "Press me"
             on_press: print("pressed")
-        Image:
+        TouchableImage:
             id: img
-            source: ""
+            fill_mode: "fill"
+            source: "monkey1.jpg"
             size_hint: 1,10
 <Editor>:
+    touchimg: image
     BoxLayout:
         orientation: "vertical"
         BoxLayout:
@@ -57,8 +59,8 @@ MouseTouch
                 Button:
                     size_hint: 1,0.1
                     text: "Pixelate"
-                    on_release: root.pixelate(root.ids.image.source,root.ids.image.source,0,0,200,200)
-            Image:
+                    on_release: root.pixelate(root.ids.image.source,root.ids.image.source,50,50)
+            TouchableImage:
                 size_hint: 2,1
                 id: image
                 source: "monkey3.jpg"
